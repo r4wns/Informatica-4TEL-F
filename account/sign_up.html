@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrati</title>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Registrati</h1>
+
+            <form action="inserimento.php" method="post">
+                <input type="text" name="firstname" placeholder="Nome"/>
+                <input type="text" name="lastname" placeholder="Cognome"/>
+                <input type="email" name="user_email" placeholder="E-mail"/>
+                <input type="password" name="user_password" placeholder="Password"/>
+
+                <input type="date" name="user_birth" placeholder="Data di nascita">
+
+                <select name="user_graduation">
+                    <option value="1">Licenza media</option>
+                    <option value="2">Superiore di II grado</option>
+                    <option value="3">Istituto Tecnico Superiore</option>
+                    <option value="4">Laurea Triennale</option>
+                    <option value="5">Laurea Magistrale</option>
+                </select>
+
+                <select name="user_region">
+                    <option value="1">Friuli Venezia Giulia</option>
+                    <option value="2">Lombardia</option>
+                    <option value="3">Sicilia</option>
+                    <option value="4">Sardegna</option>
+                    <option value="5">Lazio</option>
+                </select>
+
+                <select name="user_province">
+                    <option value="1">Udine</option>
+                    <option value="2">Milano</option>
+                    <option value="3">Palermo</option>
+                    <option value="4">Cagliari</option>
+                    <option value="5">Roma</option>
+                </select>
+
+                <input type="submit" value="Conferma e registrati">
+            </form>
+            <br>
+            <a href="index.php">Torna a Login</a>
+        </div>
+    </body>
+</html>

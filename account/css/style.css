@@ -1,0 +1,27 @@
+.container {
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ebebeb;
+}
+
+input, select {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+input[type="email"], input[type="password"] {
+    font-size: 15px;    
+    font-weight: 600;
+}
+
+input[type="submit"] {
+    background-color: green;
+    color: white;
+    font-weight: 500;
+}
+
