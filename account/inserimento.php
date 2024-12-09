@@ -26,14 +26,30 @@
             $user_region = $_POST["user_region"];
             $user_province = $_POST["user_province"];
 
-            $query_insert = "INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`, `birth_date`, `graduation`, `region`, `province`) VALUES ('$firstname','$lastname','$user_email','$user_password','$user_birth', $user_graduation,$user_region,$user_province)";
-            //echo $query_insert;
-            $result = mysqli_query($conn, $query_insert);
-            if($result) {
-                echo "<h1>Registrazione avvenuta con successo</h1>";
-            } else {
-                echo "<h1>OPSS. Errore nella registrazione. Riprova</h1>";
+            $control = "SELECT 'email' FROM 'users' WHERE 'email' = " .$user_email"'";
+            //echo $controllo
+            $result_control = mysqli_query($conn, $control);
+
+            if($result_control->num_rows > 0)
+            {
+                echo "<h1>Utente gia' registrato</h1>";
+                echo "<a href='index.php'>Torna al login</a>";
             }
+            else 
+            {
+                $query_insert = "INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`, `birth_date`, `graduation`, `region`, `province`) VALUES ('$firstname','$lastname','$user_email','$user_password','$user_birth', $user_graduation,$user_region,$user_province)";
+                //echo $query_insert;
+                $result = mysqli_query($conn, $query_insert);
+                if($result) {
+                    echo "<h1>Registrazione avvenuta con successo</h1>";
+                    echo "<a href='index.php'>Torna al login</a>";
+                } else {
+                    echo "<h1>OPSS. Errore nella registrazione. Riprova</h1>";
+                    echo "<a href='index.php'>Torna al login</a>";
+                }
+            }
+
+            
         ?>
     </body>
 </html>
